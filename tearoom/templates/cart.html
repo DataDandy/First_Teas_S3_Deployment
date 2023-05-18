@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<h1>First Tea's Cart</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Item</th>
+        <th>Quantity</th>
+        <th>Remove</th>
+        <th>Unit price</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart %}
+        {% with product=item.product %}
+          <tr>
+            <td>
+              <a href="{{ product.get_absolute_url }}">
+
+              </a>
+            </td>
+            <td>{{ product.name }}</td>
+            <td>
+              <form action="" method="post">
+                {{ item.update_quantity_form.quantity }}
+                {{ item.update_quantity_form.update }}
+                <input type="submit" value="Update">
+                {% csrf_token %}
+              </form>
+            </td>
+            <td><a href="">Remove</a></td>
+            <td class="num">${{ item.price }}</td>
+            <td class="num">${{ item.total_price }}</td>
+          </tr>
+        {% endwith %}
+      {% endfor %}
+      <tr class="total">
+        <td>Total</td>
+        <td colspan="4"></td>
+        <td class="num">${{ cart.get_total_price }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-right">
+
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a href="{% url 'menu' %}" class="button light">Continue shopping</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+            <a href="" class="button">Checkout</a>
+      </li>
+    </ul>
+  </p>
+
+
+
+
+{% endblock %}

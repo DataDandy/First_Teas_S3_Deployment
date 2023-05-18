@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<h1>First Tea's Menu </h1>
+  <h3>We offer a wide variety of bubble tea drinks and snacks including various milk teas that pair perfectly
+      with one of our sweet pastries or savory bites.
+        With such a variety of flavor combinations, we are sure you'll find something to
+        suit your tastes.</h3>
+
+<div class='row'>
+    <div class = 'column'>
+        <div class="list-group">
+
+            <a href="{% url 'menu' %}" class="list-group-item list-group-item-action" style = "width: 30%">
+                All
+            </a>
+            <a href="{% url 'menu_drinks' %}" class="list-group-item list-group-item-action" style = "width: 30%">Drinks</a>
+            <a href="{% url 'menu_snacks' %}" class="list-group-item list-group-item-action" style = "width: 30%; background-color: Turquoise">Snacks</a>
+
+        </div>
+    </div>
+
+
+    {% if snack_list %}
+        <ul>
+            {% for things in snack_list %}
+
+                <div class="card w-100" style = "height: 300px; alignment: center">
+
+                    <div class='row'>
+                        <div class = 'column'>
+                            <img class="menu_img" style = "height: 280px; width: 300px;
+                                padding-bottom: 5px; padding-top: 20px; padding-left: 20px"
+                                     src="{{ things.menu_item_image.url}}" alt="Card image cap">
+                        </div>
+
+                        <div class = 'column'>
+                            <div class="card-body" style = "alignment: center">
+                                <h4 class="card-title">{{ things.menu_item_name }}</h4>
+                                <p class="card-text">
+                                    <ul>
+                                        <li>Price: ${{ things.menu_price }}</li>
+                                        <li>Description: {{ things.menu_item_description }}</li>
+                                        <li>Ingredients: {{ things.menu_item_ingredients }}</li>
+
+                                    </ul>
+
+                                </p>
+                                <a href="#" class="btn" style = "background-color: turquoise">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <br>
+
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>There are no items in the menu.</p>
+    {% endif %}
+    </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<h1>First Tea's</h1>
+<h3>Totally the <strong>first</strong> bubble tea shop (Definitely not a Thirst Tea's ripoff)</h3>
+
+    <div class='row'>
+        <div class='column'>
+                <div class='column'>
+            <!-- Carousel -->
+            <div id="intro" class="carousel slide" data-bs-ride="carousel">
+
+              <!-- Indicators/dots -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#intro" data-bs-slide-to="0" class="active"></button>
+                  <button type="button" data-bs-target="#intro" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+              </div>
+
+              <!-- The slideshow/carousel -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src= "{% static '/img/shop.jpeg' %}" class="d-block w-100 about-img">
+                </div>
+                <div class="carousel-item">
+                  <img src= "{% static '/img/shop2.jpg' %}" class="d-block w-100">
+                </div>
+                  <div class="carousel-item">
+                  <img src= "{% static '/img/shop3.jpg' %}" class="d-block w-100">
+                </div>
+              </div>
+
+              <!-- Left and right controls/icons -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#intro" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#intro" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+            </div>
+        </div>
+
+        <div class='column'>
+            <div class='welcomeText'>
+                <h4>Welcome to our shop</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae placerat lacus, eu tincidunt est. Nulla cursus, massa id rutrum vehicula, augue leo tristique elit, eu lobortis sapien enim sed turpis. Curabitur lacinia dui at augue pretium, sit amet dapibus urna varius. Nulla ultrices turpis ac est auctor sodales. Sed diam dui, pulvinar a lacinia ut, pharetra in sapien. Praesent dapibus scelerisque laoreet. Sed eget enim lobortis, tempus nulla et, luctus elit. Fusce pharetra tellus eros, vel feugiat magna sodales eget. Morbi ultrices id odio sit amet cursus. Aliquam erat volutpat. Suspendisse vel auctor turpis, eu maximus nunc. Sed varius nulla sit amet semper finibus.</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div class='column'>
+            <div class='aboutText'>
+                <h4>About Us</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae placerat lacus, eu tincidunt est. Nulla cursus, massa id rutrum vehicula, augue leo tristique elit, eu lobortis sapien enim sed turpis. Curabitur lacinia dui at augue pretium, sit amet dapibus urna varius. Nulla ultrices turpis ac est auctor sodales. Sed diam dui, pulvinar a lacinia ut, pharetra in sapien. Praesent dapibus scelerisque laoreet. Sed eget enim lobortis, tempus nulla et, luctus elit. Fusce pharetra tellus eros, vel feugiat magna sodales eget. Morbi ultrices id odio sit amet cursus. Aliquam erat volutpat. Suspendisse vel auctor turpis, eu maximus nunc. Sed varius nulla sit amet semper finibus.</p>
+            </div>
+        </div>
+        <div class='column'>
+            <!-- Carousel -->
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+              <!-- Indicators/dots -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+              </div>
+
+              <!-- The slideshow/carousel -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src= "{% static '/img/boba.jpg' %}" class="d-block w-100 about-img">
+                </div>
+                <div class="carousel-item">
+                  <img src= "{% static '/img/brownsugar.jpg' %}" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static '/img/mac.jpg' %}" class="d-block w-100">
+                </div>
+              </div>
+
+              <!-- Left and right controls/icons -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

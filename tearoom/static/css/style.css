@@ -1,0 +1,55 @@
+{% load static %}
+
+body {
+  background-color: rgb(255, 109, 65);
+}
+
+h1 {
+  font-size: 65px;
+  text-align: center;
+  color: white;
+  margin-bottom: 25px;
+
+}
+h3 {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+h4 {
+  color: turquoise;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 50px;
+  margin-bottom: 100px;
+}
+
+.column {
+  display: inline-flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.aboutText, .welcomeText{
+  width: 100%;
+
+}
+.welcome-img, .about-img {
+  width: 100%;
+  height: auto;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+
+{% endblock %}

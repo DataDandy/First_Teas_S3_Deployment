@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>First Tea's Reviews</h1>
+    <div class="row">
+        <!-- Blog Entries Column -->
+            {% for review in review_list %}
+            <div class="card w-100">
+                <div class="card-body">
+                    <h2 class="card-title">
+                      {% if review.stars == 5 %}
+                        ★★★★★
+                    {% elif review.stars == 4 %}
+                        ★★★★☆
+                    {% elif review.stars == 3 %}
+                        ★★★☆☆
+                    {% elif review.stars == 2 %}
+                        ★★☆☆☆
+                    {% elif review.stars == 1 %}
+                        ★☆☆☆☆
+                    {% endif %}
+                        {{ review.menu_items }}
+
+
+                    </h2>
+
+                    <p class="card-text text-muted h6">{{ review.reviewer_name }} | {{ review.review_date|date:"M d, Y" }} </p>
+                    <h3 style="text-align:left;" class="card-title">
+                        "{{ review.review_title }}"
+                    </h3>
+
+                    {{review.comment}}
+
+
+                    <p class="card-text">
+                        {% if review.review_image %}
+                            <img src="{{review.review_image.url}}" style = "height: 280px; width: 300px;
+                                padding-bottom: 5px; padding-top: 20px; padding-left: 20px" alt="review imaage" >
+                        {% endif %}
+                    </p>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+<form>
+    <button formaction="{% url 'create' %}">Write a review</button>
+</form>
+
+
+{% endblock content %}
